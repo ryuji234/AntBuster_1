@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ANT
+  - Cake
+  - Hole
+  - Dead
+  - Cannon
   layers:
   - Default
   - TransparentFX
@@ -40,4 +45,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Leg
+    uniqueID: 352588943
+    locked: 0
+  - name: Cannon
+    uniqueID: 3148438353
     locked: 0
