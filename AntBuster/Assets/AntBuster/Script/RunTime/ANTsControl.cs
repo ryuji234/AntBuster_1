@@ -4,27 +4,44 @@ using UnityEngine;
 
 public class ANTsControl : MonoBehaviour
 {
+    public GameObject Counter;
     public GameObject ant1;
     public GameObject ant2;
     public GameObject ant3;
     public GameObject ant4;
     public GameObject ant5;
     public GameObject ant6;
+
+    private float Time = 9;
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Ant1",0);
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Counter.SetTextMeshPro($"{Time}");
+        if(Time == 0)
+        {
+            Counter.SetActive(false);
+            Ant1();
+        }
+        else
+        {
+            Invoke("CountDown",1);
+        }
+    }
+    private void CountDown()
+    {
+        Time--;
+        CancelInvoke();
     }
     private void Ant1()
     {
         ant1.SetActive(true);
-        CancelInvoke();
         Invoke("Ant2", 2);
     }
     private void Ant2()

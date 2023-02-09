@@ -9,6 +9,7 @@ TagManager:
   - Hole
   - Dead
   - Cannon
+  - OutofMap
   layers:
   - Default
   - TransparentFX

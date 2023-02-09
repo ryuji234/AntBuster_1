@@ -5,7 +5,7 @@ using UnityEngine.Pool;
 
 public class Bullet : MonoBehaviour
 {
-    private const int DAMAGE = 1;
+    public int DAMAGE = 1;
     // Start is called before the first frame update
     void Start()
     {

@@ -10,7 +10,7 @@ public class Cake : MonoBehaviour
     // Start is called before the first frame update
     public Sprite[] Cake_img;
     Image cake;
-    private int Count = 0;
+    public int Count = 0;
     void Start()
     {
         cake = GetComponent<Image>();
@@ -20,17 +20,27 @@ public class Cake : MonoBehaviour
     void Update()
     {
         cake.sprite= Cake_img[Count];
+        if(Count < 8)
+        {
+            transform.localPosition = new Vector2(277.2f, -112.8f);
+        }
+        else
+        {
+            transform.localPosition = new Vector2(3000, -1200);
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("개미가 케이크를 가져간다.");
-        if (Count >= 8) { }
+        
+        if (Count == 8) 
+        {
+            
+        }
         else
         {
             if(other.tag == "ANT")
             {
                 Count++;
-                Debug.Log("개미가 케이크를 가져간다.");
             }
         }
     }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public static partial class GData 
 {
-    public const string SCENE_NAME_TITLE = "01.TitleScene";
-    public const string SCENE_NAME_PLAY = "02.PlayScene";
+    public const string SCENE_NAME_TITLE = "TitleScene";
+    public const string SCENE_NAME_PLAY = "PlayScene";
 
     public const string OBJ_NAME_CURRENT_LEVEL = "Level_1";
 }

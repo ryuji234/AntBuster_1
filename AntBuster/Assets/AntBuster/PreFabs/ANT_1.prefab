@@ -217,7 +217,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guageAmount: 0
-  cakeImage: {fileID: 0}
+  cakeImage:
+  - {fileID: -1915178395, guid: f15b2a619a9675b43a2d4e840c9ba163, type: 3}
+  - {fileID: -1897818152, guid: 07ac87cb69750ed43842759daebcc714, type: 3}
 --- !u!1 &7304373355152917691
 GameObject:
   m_ObjectHideFlags: 0

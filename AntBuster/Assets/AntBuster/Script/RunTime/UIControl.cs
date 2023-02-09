@@ -11,12 +11,14 @@ public class UIControl : MonoBehaviour
     public GameObject select1;
     public GameObject select2;
     public GameObject select3;
+
+    GameManager gameManager;
     public string Name;
-    private bool IsUpgrade = false;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager =FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -26,29 +28,43 @@ public class UIControl : MonoBehaviour
     }
     public void Select1()
     {
-        Name = "Heavy Cannon";
-        control = Cannon.GetComponent<BasicCannonControl>();
-        control.Name = Name;
-        WhatCannon();
+        if (gameManager.moneyint >= 50)
+        {
+            gameManager.moneyint -= 50;
+            Name = "Heavy Cannon";
+            control = Cannon.GetComponent<BasicCannonControl>();
+            control.Name = Name;
+            WhatCannon();
+        }
+        
     }
     public void Select2()
     {
-        Name = "Quick Cannon";
-        control = Cannon.GetComponent<BasicCannonControl>();
-        control.Name = Name;
-        WhatCannon();
+        if (gameManager.moneyint >= 50)
+        {
+            gameManager.moneyint -= 50;
+            Name = "Quick Cannon";
+            control = Cannon.GetComponent<BasicCannonControl>();
+            control.Name = Name;
+            WhatCannon();
+        }
+            
     }
     public void Select3()
     {
-        Name = "Double Cannon";
-        control = Cannon.GetComponent<BasicCannonControl>();
-        control.Name = Name;
-        WhatCannon();
+        if(gameManager.moneyint >=50)
+        {
+            gameManager.moneyint -= 50;
+            Name = "Double Cannon";
+            control = Cannon.GetComponent<BasicCannonControl>();
+            control.Name = Name;
+            WhatCannon();
+        }
+        
     }
     public void Select4()
     {
         gameObject.SetActive(false);
-        Debug.Log(Cannon.transform.position);
         WhatCannon();
     }
     public void Select5()
@@ -58,13 +74,14 @@ public class UIControl : MonoBehaviour
         {
             Name = "Cannon";
             control.Name = Name;
-            IsUpgrade = false;
+            gameManager.moneyint += 50;
             WhatCannon();
         }
         else
         {
             control.DestroyCannon();
             gameObject.SetActive(false);
+            gameManager.moneyint += 50;
         }
         
     }
